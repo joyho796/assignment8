@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Your Order Has Been Submitted</title>
+      <link href="style.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="script.js"></script>
+   </head>
+
+   <body>
+      <h1>Thank you for ordering at Jade Delight</h1>
+      <div>
+         <p id="time1">order submitted at</p>
+         <p id="order">order</p>
+         <p id="total">total</p>
+         <p id="time2">order available</p>
+      </div>
+
+      <script>
+         var time = localStorage["time"];
+         var numItems = localStorage["numItems"];
+         var available = localStorage["available"];
+         var total = localStorage["total"];
+         var orderStr = "You ordered:<br>";
+         for(i=0; i<numItems; i++){
+            orderStr += localStorage[i.toString()+"quan"] + " ";
+            orderStr += localStorage[i.toString()+"name"] + "<br>";
+         }
+
+         $("#time2").html(available);
+         $("#time1").html("Your order was submitted at:<br>" + time);
+         $("#order").html(orderStr);
+         $("#total").html("Your total is:<br>$" + total);
+
+
+         localStorage.clear();
+
+      </script>
+   </body>
+
+</html>
