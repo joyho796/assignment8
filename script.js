@@ -28,9 +28,9 @@ function resetHighlight(obj) {
 $(document).ready(function(){
 
     $("#street").hide()
-    $("input[name=street]").hide()
+    $("p").eq(2).hide()
     $("#city").hide()
-    $("input[name=city]").hide()
+    $("p").eq(3).hide()
 
     $("select").change(function(){
         var subtotal = 0;
@@ -51,14 +51,14 @@ $(document).ready(function(){
     $(":radio").change(function(){
         if(this.value == "delivery") {
             $("#street").show()
-            $("input[name=street]").show()
+            $("p").eq(2).show()
             $("#city").show()
-            $("input[name=city]").show()
+            $("p").eq(3).show()
         } else {
             $("#street").hide()
-            $("input[name=street]").hide()
+            $("p").eq(2).hide()
             $("#city").hide()
-            $("input[name=city]").hide()
+            $("p").eq(3).hide()
         }
     });
 
